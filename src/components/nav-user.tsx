@@ -1,7 +1,6 @@
 "use client";
 
 import {
-  IconCreditCard,
   IconDotsVertical,
   IconLogout,
   IconNotification,
@@ -88,17 +87,12 @@ const NavUser = ({ user }: NavUserProps) => {
             <DropdownMenuGroup>
               <DropdownMenuItem>
                 <IconUserCircle />
-                Account
-              </DropdownMenuItem>
-
-              <DropdownMenuItem>
-                <IconCreditCard />
-                Billing
+                Conta
               </DropdownMenuItem>
 
               <DropdownMenuItem>
                 <IconNotification />
-                Notifications
+                Notificações
               </DropdownMenuItem>
             </DropdownMenuGroup>
 
@@ -106,7 +100,7 @@ const NavUser = ({ user }: NavUserProps) => {
 
             <DropdownMenuItem>
               <IconLogout />
-              Log out
+              Sair
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
