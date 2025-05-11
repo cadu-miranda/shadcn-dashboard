@@ -11,7 +11,8 @@ const SiteHeader = () => {
           orientation="vertical"
           className="mx-2 data-[orientation=vertical]:h-4"
         />
-        <h1 className="text-base font-medium">Documents</h1>
+
+        <h1 className="text-base font-medium">Documentos</h1>
 
         <div className="ml-auto flex items-center gap-2">
           <span>v.0.2.0</span>

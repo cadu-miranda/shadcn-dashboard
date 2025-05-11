@@ -34,7 +34,7 @@ const NavDocuments = ({ items }: NavDocumentsProps) => {
 
   return (
     <SidebarGroup className="group-data-[collapsible=icon]:hidden">
-      <SidebarGroupLabel>Documents</SidebarGroupLabel>
+      <SidebarGroupLabel>Documentos</SidebarGroupLabel>
 
       <SidebarMenu>
         {items.map((item) => (

@@ -166,7 +166,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
   },
   {
     accessorKey: "header",
-    header: "Header",
+    header: "Cabeçalho",
     cell: ({ row }) => {
       return <TableCellViewer item={row.original} />;
     },
@@ -174,7 +174,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
   },
   {
     accessorKey: "type",
-    header: "Section Type",
+    header: "Tipo da seção",
     cell: ({ row }) => (
       <div className="w-32">
         <Badge variant="outline" className="text-muted-foreground px-1.5">
@@ -199,7 +199,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
   },
   {
     accessorKey: "target",
-    header: () => <div className="w-full text-right">Target</div>,
+    header: () => <div className="w-full text-right">Alvo</div>,
     cell: ({ row }) => (
       <form
         onSubmit={(e) => {
@@ -226,7 +226,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
   },
   {
     accessorKey: "limit",
-    header: () => <div className="w-full text-right">Limit</div>,
+    header: () => <div className="w-full text-right">Limite</div>,
     cell: ({ row }) => (
       <form
         onSubmit={(e) => {
@@ -240,7 +240,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
         }}
       >
         <Label htmlFor={`${row.original.id}-limit`} className="sr-only">
-          Limit
+          Limite
         </Label>
 
         <Input
@@ -253,7 +253,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
   },
   {
     accessorKey: "reviewer",
-    header: "Reviewer",
+    header: "Revisor",
     cell: ({ row }) => {
       const isAssigned = row.original.reviewer !== "Assign reviewer";
 
@@ -264,7 +264,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
       return (
         <>
           <Label htmlFor={`${row.original.id}-reviewer`} className="sr-only">
-            Reviewer
+            Revisor
           </Label>
 
           <Select>
@@ -290,6 +290,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
   },
   {
     id: "actions",
+    header: "Ações",
     cell: () => (
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
@@ -304,15 +305,15 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
         </DropdownMenuTrigger>
 
         <DropdownMenuContent align="end" className="w-32">
-          <DropdownMenuItem>Edit</DropdownMenuItem>
+          <DropdownMenuItem>Editar</DropdownMenuItem>
 
-          <DropdownMenuItem>Make a copy</DropdownMenuItem>
+          <DropdownMenuItem>Copiar</DropdownMenuItem>
 
-          <DropdownMenuItem>Favorite</DropdownMenuItem>
+          <DropdownMenuItem>Favoritar</DropdownMenuItem>
 
           <DropdownMenuSeparator />
 
-          <DropdownMenuItem variant="destructive">Delete</DropdownMenuItem>
+          <DropdownMenuItem variant="destructive">Remover</DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
     ),
@@ -465,9 +466,9 @@ export function DataTable({
               <Button variant="outline" size="sm">
                 <IconLayoutColumns />
 
-                <span className="hidden lg:inline">Customize Columns</span>
+                <span className="hidden lg:inline">Customizar colunas</span>
 
-                <span className="lg:hidden">Columns</span>
+                <span className="lg:hidden">Colunas</span>
                 <IconChevronDown />
               </Button>
             </DropdownMenuTrigger>
@@ -500,7 +501,7 @@ export function DataTable({
           <Button variant="outline" size="sm">
             <IconPlus />
 
-            <span className="hidden lg:inline">Add Section</span>
+            <span className="hidden lg:inline">Adicionar seção</span>
           </Button>
         </div>
       </div>
@@ -564,14 +565,14 @@ export function DataTable({
 
         <div className="flex items-center justify-between px-4">
           <div className="text-muted-foreground hidden flex-1 text-sm lg:flex">
-            {table.getFilteredSelectedRowModel().rows.length} of{" "}
-            {table.getFilteredRowModel().rows.length} row(s) selected.
+            {table.getFilteredSelectedRowModel().rows.length} de{" "}
+            {table.getFilteredRowModel().rows.length} linha(s) selecionada(s).
           </div>
 
           <div className="flex w-full items-center gap-8 lg:w-fit">
             <div className="hidden items-center gap-2 lg:flex">
               <Label htmlFor="rows-per-page" className="text-sm font-medium">
-                Rows per page
+                Linhas por página
               </Label>
 
               <Select
@@ -597,7 +598,7 @@ export function DataTable({
             </div>
 
             <div className="flex w-fit items-center justify-center text-sm font-medium">
-              Page {table.getState().pagination.pageIndex + 1} of{" "}
+              Página {table.getState().pagination.pageIndex + 1} de{" "}
               {table.getPageCount()}
             </div>
 
