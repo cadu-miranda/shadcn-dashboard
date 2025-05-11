@@ -18,6 +18,7 @@ const Dashboard = () => {
       }
     >
       <AppSidebar variant="inset" />
+
       <SidebarInset>
         <SiteHeader />
 
