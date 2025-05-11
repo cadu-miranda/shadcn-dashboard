@@ -10,6 +10,18 @@ import {
 } from "@/components/ui/card";
 
 const SectionCards = () => {
+  const totalRevenue = 1250;
+
+  const totalRevenuePercentage = 12.5;
+
+  const totalNewCustomers = 1234;
+
+  const newCustomersPercentage = -20;
+
+  const totalActiveAccounts = 45678;
+
+  const activeAccountsPercentage = 12.5;
+
   return (
     <div className="*:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card dark:*:data-[slot=card]:bg-card grid grid-cols-1 gap-4 px-4 *:data-[slot=card]:bg-gradient-to-t *:data-[slot=card]:shadow-xs lg:px-6 @xl/main:grid-cols-2 @5xl/main:grid-cols-4">
       <Card className="@container/card">
@@ -17,13 +29,17 @@ const SectionCards = () => {
           <CardDescription>Receita total</CardDescription>
 
           <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-            R$1.250,00
+            {totalRevenue.toLocaleString("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            })}
           </CardTitle>
 
           <CardAction>
             <Badge variant="outline">
               <IconTrendingUp />
-              +12,5%
+              {totalRevenuePercentage > 0 ? "+" : ""}
+              {totalRevenuePercentage}%
             </Badge>
           </CardAction>
         </CardHeader>
@@ -44,13 +60,14 @@ const SectionCards = () => {
           <CardDescription>Novos clientes</CardDescription>
 
           <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-            1.234
+            {totalNewCustomers.toLocaleString("pt-BR")}
           </CardTitle>
 
           <CardAction>
             <Badge variant="outline">
               <IconTrendingDown />
-              -20%
+              {newCustomersPercentage > 0 ? "+" : ""}
+              {newCustomersPercentage}%
             </Badge>
           </CardAction>
         </CardHeader>
@@ -71,13 +88,14 @@ const SectionCards = () => {
           <CardDescription>Contas ativas</CardDescription>
 
           <CardTitle className="text-2xl font-semibold tabular-nums @[250px]/card:text-3xl">
-            45.678
+            {totalActiveAccounts.toLocaleString("pt-BR")}
           </CardTitle>
 
           <CardAction>
             <Badge variant="outline">
               <IconTrendingUp />
-              +12,5%
+              {activeAccountsPercentage > 0 ? "+" : ""}
+              {activeAccountsPercentage}%
             </Badge>
           </CardAction>
         </CardHeader>
