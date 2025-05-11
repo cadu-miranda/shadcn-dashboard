@@ -1,6 +1,7 @@
 "use client";
 
-import { Moon, Sun } from "lucide-react";
+import { JSX } from "react";
+import { Sun, Moon, MonitorCog } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import {
@@ -11,17 +12,25 @@ import {
 } from "@/components/ui/dropdown-menu";
 
 const ModeToggle = () => {
-  const { setTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
+
+  const themeIconMapper: Record<string, JSX.Element> = {
+    light: (
+      <Sun className="absolute h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
+    ),
+    dark: (
+      <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
+    ),
+    system: (
+      <MonitorCog className="absolute h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
+    ),
+  };
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button variant="outline" size="icon">
-          <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-
-          <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-
-          <span className="sr-only">Alternar tema entre claro e escuro</span>
+          {themeIconMapper[theme || "system"]}
         </Button>
       </DropdownMenuTrigger>
 
