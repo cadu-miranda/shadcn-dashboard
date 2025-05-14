@@ -1,6 +1,6 @@
 "use client";
 
-import { JSX } from "react";
+import { JSX, useEffect, useState } from "react";
 import { Sun, Moon, MonitorCog } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
@@ -13,6 +13,16 @@ import {
 
 const ModeToggle = () => {
   const { theme, setTheme } = useTheme();
+
+  const [mounted, setMounted] = useState<boolean>(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return <></>;
+  }
 
   const themeIconMapper: Record<string, JSX.Element> = {
     light: <Sun />,
