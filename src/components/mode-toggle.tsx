@@ -15,15 +15,9 @@ const ModeToggle = () => {
   const { theme, setTheme } = useTheme();
 
   const themeIconMapper: Record<string, JSX.Element> = {
-    light: (
-      <Sun className="absolute h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
-    ),
-    dark: (
-      <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
-    ),
-    system: (
-      <MonitorCog className="absolute h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all" />
-    ),
+    light: <Sun />,
+    dark: <Moon />,
+    system: <MonitorCog />,
   };
 
   return (

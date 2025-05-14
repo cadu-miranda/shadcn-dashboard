@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "@/components/theme-toggle";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const sansSerifFont = Inter({
   subsets: ["latin"],
+  variable: "--font-sans",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const monospaceFont = JetBrains_Mono({
   subsets: ["latin"],
+  variable: "--font-mono",
 });
 
 export const metadata: Metadata = {
@@ -25,7 +25,7 @@ const RootLayout = ({
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${sansSerifFont.variable} ${monospaceFont.variable} antialiased`}
       >
         <ThemeProvider
           attribute="class"
